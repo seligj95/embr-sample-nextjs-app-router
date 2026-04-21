@@ -1,0 +1,13 @@
+platform: nodejs
+platformVersion: "20"
+buildCommand: "npm ci && npm run build"
+autoDeploy: true
+
+run:
+  port: 3000
+  startCommand: "npm start"
+
+healthCheck:
+  enabled: true
+  path: "/api/health"
+  expectedStatusCode: 200
